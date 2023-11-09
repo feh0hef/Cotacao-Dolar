@@ -2,8 +2,6 @@
 Esse código foi criado com o objetivo de informar a cotação do dolar para o usuário na data selecionada.
 Projeto desenvolvido para a vaga de estágio em Riscos na Kinea.
 
-Contribuições e comentários são aceitos, dado que após a entrega do código (09/11) o projeto não será subordinado a avaliação.
-
 Explicação:
 
 Desenvolva uma aplicação que o cliente consulte o banco de dados em busca da cotação de dólar na data inserida por ele. Caso não tenha, consulte a cotação na API do banco central, cadastre a cotação no banco de dados e retorne ao cliente.
