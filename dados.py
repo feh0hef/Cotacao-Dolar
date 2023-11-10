@@ -6,22 +6,21 @@ import pprint
 import json
 from conexoesBD import postgresql
 from datetime import date
-from sshtunnel import SSHTunnelForwarder
 
 #Solicitar dados na API
 def solicitar_api(data = str):
     "solicitar dados na api do bcb"
 
-    link = link = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao"
+    link = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao"
 
     requisicao = requests.get(link)
 
+    informacoes = json.loads(requisicao.text)
+
     teste_conx = str(requisicao)
 
-    if teste_conx == "<Response [400]>":
+    if teste_conx == "<Response [200]>":
 
-        informacoes = requisicao.json()
-        
         pprint.pprint(informacoes)
 
         tabela_informacoes = pd.DataFrame(informacoes['value'])
@@ -30,7 +29,6 @@ def solicitar_api(data = str):
         tabela_informacoes.drop(columns=['horaCotacao', 'dataHoraCotacao'], inplace=True)
     else:
         print("Erro de conexão com a API \nTente novamente mais tarde.")
-        exit()
         
     return tabela_informacoes
 
