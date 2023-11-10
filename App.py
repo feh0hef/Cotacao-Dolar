@@ -1,11 +1,11 @@
 from interacoes import calculos_cot
 
 #Valores após solicitação
-data, cot_compra, cot_venda, var_compra, var_venda, medio_compra, medio_venda, desv, pm_baixo = calculos_cot()
+data_bd, cot_compra, cot_venda, var_compra, var_venda, medio_compra, medio_venda, desv, pm_baixo = calculos_cot()
 
 texto = f"""
 ----------------------
-Data da cotação:{data:10}
+Data da cotação:{data_bd:10}
 Compra:{cot_compra:10}
 Venda:{cot_venda:10}
 ----------------------
