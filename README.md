@@ -25,9 +25,3 @@ Além de visualizar o valor da cotação, o mesmo deve indicar sua variação e 
 
 Link da API do Banco Central: https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios
 
-
-Bônus:
-
-1. Crie um docker-compose com a aplicação.
-
-2. Disponibilizar online de alguma plataforma de sua preferência como (Heroku, Google Cloud, AWS).
